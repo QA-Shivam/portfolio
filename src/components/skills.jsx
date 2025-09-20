@@ -23,7 +23,7 @@ const skills = [
   { name: "Playwright", icon: <SiPlaywright className="text-green-400 text-2xl" />, level: 85 },
   { name: "Postman", icon: <SiPostman className="text-orange-400 text-2xl" />, level: 80 },
   { name: "Git", icon: <FaGitAlt className="text-[#F05032] text-2xl" />, level: 85 },
-  { name: "Appium", icon: <img src="/appium.svg" alt="Appium" className="w-6 h-6" />, level: 80, },
+  { name: "Appium", icon: <img src="appium.svg" alt="Appium" className="w-6 h-6" />, level: 80, },
   { name: "Docker", icon: <FaDocker className="text-blue-500 text-2xl" />, level: 85 },
   { name: "Grafana", icon: <SiGrafana className="text-[#F46800] text-2xl" />, level: 85 },
 

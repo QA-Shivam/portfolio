@@ -14,7 +14,7 @@ const experiences = [
       "Integrated CI/CD pipelines for faster deployments.",
       "Mentored 3 junior QA engineers on automation best practices."
     ],
-    icon: <img src="/angelone.png" alt="AngelOne" />,
+    icon: <img src="angelone.png" alt="AngelOne" />,
   },
   {
     role: "Software Quality Engineer",
@@ -26,7 +26,7 @@ const experiences = [
       "Improved API test coverage from 60% to 95%.",
       "Reduced manual testing effort by 35% via automation scripts.",
     ],
-    icon: <img src="/infosys.png" alt="Infosys" />,
+    icon: <img src="infosys.png" alt="Infosys" />,
   },
   {
     role: "Web Development Intern",
@@ -38,7 +38,7 @@ const experiences = [
       "Created automated test scripts for key web modules.",
       "Reported and tracked 50+ critical defects with detailed test cases."
     ],
-    icon: <img src="/spark.png" alt="spark" />,
+    icon: <img src="spark.png" alt="spark" />,
   },
 ];
 

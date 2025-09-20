@@ -68,7 +68,7 @@ const certsData = [
     title: "Rest API Testing with RestAssured",
     issuer: "Udemy",
     year: 2025,
-    badge: "/cert1.jpg",
+    badge: "cert1.jpg",
     link: "https://www.udemy.com/certificate/UC-247e63a5-4bdc-4c25-8c18-822a9db7c32c/",
   },
   {
@@ -76,7 +76,7 @@ const certsData = [
     title: "Automation Testing with Docker and CI/CD",
     issuer: "Udemy",
     year: 2025,
-    badge: "/cert2.jpg",
+    badge: "cert2.jpg",
     link: "https://www.udemy.com/certificate/UC-b0deb047-5cd5-4df9-8b4d-56d0f67772e0/",
   },
   {
@@ -84,7 +84,7 @@ const certsData = [
     title: "Selenium 101 Certification",
     issuer: "LambdaTest",
     year: 2025,
-    badge: "/cert3.png",
+    badge: "cert3.png",
     link: "https://www.lambdatest.com/certifications/lambdatest-certified/S101-8ZB1ML.png",
   },
   {
@@ -100,7 +100,7 @@ const certsData = [
     title: "Microsoft Certified: Azure Data Fundamentals",
     issuer: "Microsoft",
     year: 2023,
-    badge: "/cert4.svg",
+    badge: "cert4.svg",
     link: "https://learn.microsoft.com/api/credentials/share/en-gb/ShivamKumar-1554/B6736E5293F247FF?sharingId=6CD55A3419016898",
   },
   {
@@ -108,7 +108,7 @@ const certsData = [
     title: "AWS Certified Cloud Practitioner",
     issuer: "AWS",
     year: 2023,
-    badge: "/cert5.png",
+    badge: "cert5.png",
     link: "https://drive.google.com/file/d/15IlpwUqIsKuNqmLIduZd2fmfa0LXD1Fo/view?usp=drive_link",
   },
 ];

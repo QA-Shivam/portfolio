@@ -103,7 +103,7 @@ export default function Hero() {
         >
           <div className="relative">
             <div className="hero-image w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-80 lg:h-80">
-              <img src="/profile.jpeg" alt="Shivam Kumar" />
+              <img src="profile.jpeg" alt="Shivam Kumar" />
             </div>
             {/* Glowing Ring Animation */}
             <div className="absolute inset-0 rounded-full border-4 border-emerald-500 animate-pulse opacity-60"></div>

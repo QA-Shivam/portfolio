@@ -31,7 +31,7 @@ export default function About() {
         >
           <div className="hero-image w-48 h-48 sm:w-56 sm:h-56">
             <img
-              src="/profile.jpeg"
+              src="profile.jpeg"
               alt="Profile"
               className="rounded-full object-cover w-full h-full"
             />

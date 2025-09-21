@@ -89,11 +89,11 @@ const certsData = [
   },
   {
     id: 4,
-    title: "Selenium 101 Certification",
-    issuer: "LambdaTest",
+    title: "Using Generative AI in Software Automation Testing",
+    issuer: "Udemy",
     year: 2025,
-    badge: "/certs/selenium.png",
-    link: "https://www.lambdatest.com/certifications/lambdatest-certified/S101-8ZB1ML.png",
+    badge: "cert6.png",
+    link: "https://drive.google.com/file/d/1N872nfzgX_bicmhpp8po4YzQGaSoZIWn/view?usp=drive_link",
   },
   {
     id: 5,
@@ -156,9 +156,10 @@ export default function ProjectsAndCertifications() {
           {projectsData.slice(0, visibleCount).map((p, idx) => (
             <motion.article
               key={p.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ delay: idx * 0.08, duration: 0.5 }}
               className="project-card"
             >
               <div className="flex items-start justify-between gap-4">
@@ -227,9 +228,10 @@ export default function ProjectsAndCertifications() {
             {certsData.map((c, i) => (
               <motion.div
                 key={c.id}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08, duration: 0.45 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="cert-card"
               >
                 <div className="cert-img">

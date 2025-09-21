@@ -148,7 +148,23 @@ body {
 .dark .social-btn.leetcode:hover svg {
   color: #ffcc66;
 }
+/* Instagram */
+.social-btn.instagram:hover svg {
+  color: #E1306C; /* Instagram pink */
+}
 
+.dark .social-btn.instagram:hover svg {
+  color: #FF66A3; /* Slightly lighter for dark mode */
+}
+
+/* WhatsApp */
+.social-btn.whatsapp:hover svg {
+  color: #25D366; /* WhatsApp green */
+}
+
+.dark .social-btn.whatsapp:hover svg {
+  color: #4ee383; /* Slightly lighter for dark mode */
+}
 /* Tooltip */
 .tooltip {
   @apply absolute left-1/2 -translate-x-1/2 top-full mt-2 px-2 py-1 text-xs rounded-md text-gray-700 dark:text-emerald-400 opacity-0 pointer-events-none transition-all duration-200 whitespace-nowrap border border-gray-200 dark:border-emerald-500 shadow-sm z-50;
@@ -1150,49 +1166,323 @@ body {
   color: #4b5563;
   margin-top: 0.5rem;
 }
+
+@media (max-width: 640px) {
+  .tag {
+    font-size: 0.75rem;     
+    padding: 0.2rem 0.6rem;  
+  }
+}
   
 }
 
 
-/* Section */
+/* ================== Contact Section ================== */
 .contact-section {
-  @apply w-full bg-gradient-to-br from-gray-100 via-white to-gray-200 
-         dark:from-gray-900 dark:via-black dark:to-gray-800 py-20;
+  @apply w-full relative bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+  scroll-margin-top: 80px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-/* Title */
+/* ================== Floating Bubbles ================== */
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.1);
+  animation: floatBubbleContact 12s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-section::before {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: -50px;
+}
+
+.contact-section::after {
+  width: 250px;
+  height: 250px;
+  bottom: 8%;
+  right: -70px;
+  animation-delay: 3s;
+}
+
+@keyframes floatBubbleContact {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-30px) scale(1.05); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 0.6; }
+}
+
+/* Small decorative bubbles */
+.contact-section .bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.4) 0%, rgba(16,185,129,0.1) 70%);
+  animation: floatBubbleContact linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.contact-section .bubble1 { width: 60px; height: 60px; top: 20%; left: 10%; animation-delay: 0s; }
+.contact-section .bubble2 { width: 40px; height: 40px; bottom: 15%; right: 15%; animation-delay: 2s; }
+.contact-section .bubble3 { width: 80px; height: 80px; bottom: 5%; left: 25%; animation-delay: 4s; }
+
+/* ================== Title + Underline ================== */
 .contact-title {
-  @apply text-3xl font-extrabold text-gray-800 dark:text-gray-100 mb-6 relative inline-block;
+  font-weight: 800;
+  color: #374151;
+  text-align: center;
+  font-size: 2rem;
+
 }
+.dark .contact-title { color: #e6eef1; }
+.contact-title .highlight { color: #10b981; }
+
 .contact-underline {
-  @apply absolute left-0 -bottom-2 h-1 bg-emerald-500 rounded-full;
-  width: 120px;
-  transform-origin: left;
+  display: block;
+  height: 4px;
+  background: #10b981;
+  border-radius: 4px;
+  margin-top: 6px;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Subtitle */
 .contact-subtitle {
-  @apply text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-10 text-base;
+  font-size:0.875rem;
+  color: #6b7280;
 }
 
-/* Icons */
-.contact-icons {
-  @apply flex justify-center gap-6 mb-12;
+.dark .contact-subtitle {
+  color: #9ca3af;
 }
-.contact-icons a {
-  @apply w-12 h-12 flex items-center justify-center rounded-full 
-         bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200
-         shadow-md transition-all duration-300;
-}
-.contact-icons a:hover {
-  @apply bg-emerald-500 text-white shadow-lg shadow-emerald-500/40;
+/* ================== Contact Cards & Info ================== */
+.contact-card {
+  @apply rounded-2xl p-6 shadow-md flex flex-col gap-[2.5rem];
+  background-color: rgba(229, 231, 235, 0.85); /* Light mode background */
+  border: 1px solid rgba(16,185,129,0.06);
+  z-index: 1;
 }
 
-/* Hire Button */
-.btn-hire {
-  @apply bg-emerald-500 text-white px-8 py-3 rounded-full font-semibold 
-         transition-all duration-300 shadow-md;
+/* Keep dark mode */
+.dark .contact-card {
+  @apply bg-gray-800;
 }
-.btn-hire:hover {
-  @apply bg-emerald-600 shadow-lg shadow-emerald-500/40;
+
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+.dark .card-desc { color: #94a3b8; }
+
+.info-small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #10b981; 
+}
+
+.contact-info { 
+  @apply flex flex-col gap-6; 
+  margin-top: 1rem; 
+}
+
+/* Contact Info Rows */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* Icon container */
+.info-icon-wrap {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #10b98120, #10b98140);
+  transition: all 0.3s ease;
+}
+
+.info-icon {
+  font-size: 1.3rem;
+  color: #10b981;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.info-icon-wrap:hover .info-icon {
+  color: #4b5563;
+}
+
+.dark .info-icon-wrap:hover .info-icon {
+    color: #fff;
+}
+
+/* Text beside icons */
+.info-text {
+  flex: 1;
+  min-width: 0; /* allows text wrapping */
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.info-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.dark .info-value {
+  color: #d1d5db;
+}
+
+
+/* ================== Social Icons ================== */
+.social-icons { @apply flex gap-3 mt-3; }
+
+.social-btn {
+  @apply flex items-center justify-center w-10 h-10 rounded-full shadow-md transition-all duration-300;
+  background: #e5e7eb; /* neutral default */
+  color: #111827;
+}
+
+
+/* ================== Form ================== */
+.contact-form {
+  @apply rounded-2xl p-6 shadow-md flex flex-col gap-4;
+  background-color: rgba(229, 231, 235, 0.85); /* Light mode */
+  border: 1px solid rgba(16,185,129,0.06);
+  z-index: 1;
+}
+
+/* Dark mode */
+.dark .contact-form {
+  @apply bg-gray-800;
+}
+
+
+.field-label {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+.dark .field-label { color: #94a3b8; }
+
+.input, .textarea {
+  @apply w-full rounded-lg border px-4 py-3 outline-none transition;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: transparent;
+  color: #0f172a;
+}
+.dark .input, .dark .textarea {
+  border-color: rgba(255,255,255,0.08);
+  color: #e6eef1;
+}
+.input:focus, .textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 6px 30px rgba(16,185,129,0.08);
+}
+.textarea { min-height: 140px; resize: vertical; }
+
+/* ======================================================================
+   CSS: paste the following styles into your index.css (replace previous
+   .btn-send, .spinner, .status-* rules). The rest of your file can stay
+   as-is.
+   ====================================================================== */
+
+/* ================== Send Button (hero button style, non-pill) ================== */
+.btn-send {
+  @apply bg-emerald-500 text-white text-[16px] rounded-lg font-semibold px-5 py-2 inline-flex items-center gap-2 transition-all duration-300 shadow-md;
+  white-space: nowrap; /* keep icon + text on single line */
+}
+
+.btn-send:hover {
+  @apply bg-emerald-600 shadow-emerald-500/40;
+  transform: none; /* do not translate/scale on hover */
+}
+
+.btn-send:active {
+  /* subtle feedback for keyboard/mouse click */
+  transform: translateY(0.5px);
+}
+
+.btn-send[disabled] {
+  @apply opacity-60 cursor-not-allowed;
+  filter: grayscale(10%);
+}
+
+.btn-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.btn-loading {
+  @apply inline-flex items-center gap-2;
+}
+
+/* ================== Spinner ================== */
+.spinner { width: 18px; height: 18px; animation: spin 0.9s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+/* spinner stroke will match button text (white) */
+.spinner .path, .btn-loading .path { stroke: white; stroke-linecap: round; }
+
+/* ================== Status messages ================== */
+.status-area { min-height: 1.5rem; }
+.status-error {
+  color: #7f1d1d; /* dark red text for good contrast */
+  background: rgba(239, 68, 68, 0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.status-success {
+  color: #064e3b; /* dark emerald */
+  background: rgba(16, 185, 129, 0.06);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Dark mode adjustments */
+.dark .status-error { color: #fecaca; background: rgba(239,68,68,0.12); }
+.dark .status-success { color: #bbf7d0; background: rgba(16,185,129,0.08); }
+
+
+/* ================== Map Card ================== */
+.map-card {
+  @apply rounded-xl p-4 shadow-sm;
+  background-color: rgba(229, 231, 235, 0.85); /* light mode */
+}
+/* Dark mode override */
+.dark .map-card {
+  @apply bg-gray-700;
+}
+.map-placeholder {
+  @apply w-full h-40 flex items-center justify-center rounded-md bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-300;
+  font-size: 0.9rem;
+}
+.map-caption {
+  @apply text-sm text-gray-500 dark:text-gray-400 mt-2;
 }

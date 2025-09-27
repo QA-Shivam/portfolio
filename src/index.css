@@ -311,7 +311,7 @@ body {
 
 /* Buttons */
 .hero-buttons a {
-  @apply px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-md;
+  @apply px-5 py-2 rounded-lg transition-all duration-300 shadow-md;
   transition: .5s ease;
   animation: slideLeft 1s ease forwards;
   opacity: 0;
@@ -407,45 +407,6 @@ body {
     opacity: 0;
   }
 }
-
-
-/* ================== Footer ================== */
-.footer {
-  @apply bg-gray-900 text-gray-400 py-8 px-4;
-}
-
-.footer-container {
-  @apply max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6;
-}
-
-.footer-text {
-  @apply text-center md:text-left text-sm;
-}
-
-.tagline {
-  @apply text-center text-gray-400 text-xs mt-1 md:mt-0;
-}
-
-.navLinks {
-  @apply flex flex-wrap gap-4 justify-center md:justify-start text-sm my-4 md:my-0;
-}
-
-.navLinks a {
-  @apply hover:text-emerald-400 transition-colors duration-200;
-}
-
-.socialIcons {
-  @apply flex gap-4 mt-2 md:mt-0;
-}
-
-.socialIcons a {
-  @apply transition-transform duration-200 hover:scale-110 hover:text-emerald-400;
-}
-
-.ctaButton {
-  @apply mt-2 md:mt-0 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-all duration-300;
-}
-
 
 /* ================== About Section ================== */
 .about-section {
@@ -1095,7 +1056,7 @@ body {
 
 .btn-repo,
 .btn-viewall {
-  @apply bg-emerald-500 text-white text-[14px] rounded-full font-semibold px-4 py-2 inline-flex items-center gap-2 transition-all duration-300;
+  @apply bg-emerald-500 text-white text-[14px] rounded-full px-4 py-2 inline-flex items-center gap-2 transition-all duration-300;
 }
 
 .btn-repo:hover,
@@ -1489,4 +1450,43 @@ body {
 }
 .map-caption {
   @apply text-sm text-gray-500 dark:text-gray-400 mt-2;
+}
+
+
+
+/* ================== Footer ================== */
+.footer {
+  @apply bg-gray-900 text-gray-400 py-8 px-4;
+}
+
+.footer-container {
+  @apply max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6;
+}
+
+.footer-text {
+  @apply text-center md:text-left text-sm;
+}
+
+.tagline {
+  @apply text-center text-gray-400 text-xs mt-1 md:mt-0;
+}
+
+.navLinks {
+  @apply flex flex-wrap gap-4 justify-center md:justify-start text-sm my-4 md:my-0;
+}
+
+.navLinks a {
+  @apply hover:text-emerald-400 transition-colors duration-200;
+}
+
+.socialIcons {
+  @apply flex gap-4 mt-2 md:mt-0;
+}
+
+.socialIcons a {
+  @apply transition-transform duration-200 hover:scale-110 hover:text-emerald-400;
+}
+
+.ctaButton {
+  @apply mt-2 md:mt-0 px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition-all duration-300;
 }

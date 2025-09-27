@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import {
-  Briefcase, Award, Wrench, FolderGit2  // ✅ Lucide icons
+  Briefcase, Award, Wrench, FolderGit2
 } from "lucide-react";
 import "../index.css";
 
@@ -24,8 +24,8 @@ export default function About() {
         {/* LEFT - Profile + Buttons + Socials */}
         <motion.div
           className="about-left w-full"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1 }}
         >
@@ -37,10 +37,36 @@ export default function About() {
             />
           </div>
 
-          <div className="hero-buttons mt-4 flex gap-4">
-            <a href="#contact" className="primary">Hire Me</a>
+          {/* Buttons with slide-in animation (together) */}
+          <motion.div
+            className="hero-buttons mt-4 flex gap-4"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            {/* Hire Me button with scroll logic */}
+            <a
+              onClick={() => {
+                const isMobile = window.innerWidth < 768;
+                const sectionId = isMobile ? "form" : "contact";
+                const section = document.getElementById(sectionId);
+                if (section) {
+                  const navbarHeight = 64; // adjust if you have fixed navbar
+                  const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+                  window.scrollTo({
+                    top: sectionTop - navbarHeight,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="primary"
+            >
+              Hire Me
+            </a>
+
             <a href="#projects" className="secondary">My Work</a>
-          </div>
+          </motion.div>
 
           {/* Desktop Socials */}
           <div className="about-socials mt-4 flex gap-4 hidden md:flex">
@@ -65,7 +91,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="about-title hero-title">
-            About  <span className="highlight">Me</span>
+            About <span className="highlight">Me</span>
             <motion.span
               className="about-underline"
               initial={{ width: 0 }}
@@ -124,6 +150,7 @@ export default function About() {
         </motion.div>
       </div>
 
+      {/* Scroll indicator */}
       <motion.div
         className="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -134,7 +161,6 @@ export default function About() {
           <span className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></span>
         </span>
       </motion.div>
-
     </section>
   );
 }

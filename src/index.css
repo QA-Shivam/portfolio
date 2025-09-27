@@ -1229,7 +1229,7 @@ body {
 }
 /* ================== Contact Cards & Info ================== */
 .contact-card {
-  @apply rounded-2xl p-6 shadow-md flex flex-col gap-[2.5rem];
+  @apply rounded-2xl p-8 shadow-md flex flex-col gap-[3.8rem];
   background-color: rgba(229, 231, 235, 0.85); /* Light mode background */
   border: 1px solid rgba(16,185,129,0.06);
   z-index: 1;

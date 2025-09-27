@@ -4,6 +4,7 @@ import { FiSend, FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import "../index.css";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -13,22 +14,48 @@ export default function Contact() {
   const { ref: rightRef, inView: rightInView } = useInView({ triggerOnce: false, threshold: 0.2 });
   const { ref: underlineRef, inView: underlineInView } = useInView({ triggerOnce: false, threshold: 0.3 });
 
+  // Vite env vars (fallback strings if not set)
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+
   const handleChange = (e) => setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
+
+  // Email validation
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate fields
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       setStatus({ sending: false, sent: false, error: "Please fill all fields." });
       return;
     }
+
+    if (!validateEmail(form.email)) {
+      setStatus({ sending: false, sent: false, error: "Please enter a valid email." });
+      return;
+    }
+
     setStatus({ sending: true, sent: false, error: "" });
+
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+    };
+
     try {
-      await new Promise((res) => setTimeout(res, 900));
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       setStatus({ sending: false, sent: true, error: "" });
       setForm({ name: "", email: "", message: "" });
+
+      // auto-hide success after 3.5s
       setTimeout(() => setStatus((s) => ({ ...s, sent: false })), 3500);
     } catch (err) {
-      setStatus({ sending: false, sent: false, error: "Something went wrong. Try again." });
+      console.error("EmailJS error:", err);
+      setStatus({ sending: false, sent: false, error: "Failed to send. Please try again." });
     }
   };
 
@@ -42,7 +69,9 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="contact-title">Let's <span className="highlight">Connect</span></h2>
+          <h2 className="contact-title">
+            Let's <span className="highlight">Connect</span>
+          </h2>
           <motion.span
             ref={underlineRef}
             className="contact-underline"
@@ -58,7 +87,13 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left: Contact card + socials */}
-          <motion.div ref={leftRef} className="lg:col-span-4" initial={{ opacity: 0, x: -50 }} animate={leftInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, ease: "easeOut" }}>
+          <motion.div
+            ref={leftRef}
+            className="lg:col-span-4"
+            initial={{ opacity: 0, x: -50 }}
+            animate={leftInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="contact-card">
               <h3 className="card-title">Get in touch</h3>
               <p className="card-desc">Prefer email? Or message me below — I reply within 24–48 hrs.</p>
@@ -110,7 +145,13 @@ export default function Contact() {
           </motion.div>
 
           {/* Right: Form + Map */}
-          <motion.div ref={rightRef} className="lg:col-span-8" initial={{ opacity: 0, x: 50 }} animate={rightInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, ease: "easeOut" }}>
+          <motion.div
+            ref={rightRef}
+            className="lg:col-span-8"
+            initial={{ opacity: 0, x: 50 }}
+            animate={rightInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <form id="form" className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.label className="field" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
@@ -130,21 +171,23 @@ export default function Contact() {
 
               <div className="mt-5 flex items-center gap-4">
                 <motion.button whileTap={{ scale: 0.98 }} type="submit" className="btn-send" aria-live="polite" disabled={status.sending}>
-                  {!status.sending ? <FiSend className="btn-icon" /> : <span className="btn-loading" aria-hidden="true">Sending...</span>}
+                  {!status.sending ? <FiSend className="btn-icon" /> : <span className="btn-loading"><span className="spinner" /> Sending...</span>}
                 </motion.button>
-                <div className="status-area">
+
+                <div className="status-area" aria-live="polite">
                   {status.error && <div className="status-error">{status.error}</div>}
                   {status.sent && <div className="status-success">Thanks — message sent!</div>}
                 </div>
               </div>
             </form>
 
+            {/* Map Section */}
             <motion.div className="map-card mt-8 rounded-xl overflow-hidden shadow-md" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.5 }}>
               <iframe
                 title="Bengaluru Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.934729926243!2d77.59456607488106!3d12.971598591308077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670d6c8c1f3%3A0x7a0a2c7d9f3d7!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sus!4v1695291234567!5m2!1sen!2sus"
                 width="100%"
-                height="100"
+                height="200"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"

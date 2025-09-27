@@ -1322,6 +1322,10 @@ body {
 .dark .info-value {
   color: #d1d5db;
 }
+.info-value a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
 
 
 /* ================== Social Icons ================== */

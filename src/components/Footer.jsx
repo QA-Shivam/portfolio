@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4">
             {/* GitHub */}
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/QA-Shivam/My-Profile.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FaGithub
                 size={20}
                 className="text-gray-700 dark:text-white hover:text-black dark:hover:text-white transition-colors duration-200"
@@ -55,7 +55,7 @@ export default function Footer() {
             </a>
 
             {/* LinkedIn */}
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/kumar-shivam16399" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin
                 size={20}
                 className="text-gray-700 dark:text-white hover:text-[#0077B5] dark:hover:text-[#0A66C2] transition-colors duration-200"
@@ -71,7 +71,7 @@ export default function Footer() {
             </a>
 
             {/* WhatsApp */}
-            <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/7599665318" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <FaWhatsapp
                 size={20}
                 className="text-gray-700 dark:text-white hover:text-[#25D366] dark:hover:text-[#25D366] transition-colors duration-200"

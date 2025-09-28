@@ -70,13 +70,13 @@ export default function About() {
 
           {/* Desktop Socials */}
           <div className="about-socials mt-4 flex gap-4 hidden md:flex">
-            <a className="social-btn github" href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+            <a className="social-btn github" href="https://github.com/QA-Shivam/My-Profile.git" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a className="social-btn linkedin" href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+            <a className="social-btn linkedin" href="https://www.linkedin.com/in/kumar-shivam16399" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
-            <a className="social-btn leetcode" href="https://leetcode.com/yourleetcode" target="_blank" rel="noopener noreferrer">
+            <a className="social-btn leetcode" href="https://leetcode.com/u/qashivam/" target="_blank" rel="noopener noreferrer">
               <SiLeetcode />
             </a>
           </div>

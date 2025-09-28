@@ -987,21 +987,17 @@ body {
   border-radius: 4px;
   margin: 0.5rem auto 1rem;
 }
-
 .project-card {
-  background: linear-gradient(to bottom right, #f3f4f6, #ffffff, #e5e7eb); /* light mode gradient */
+  background: rgba(229, 231, 235, 0.85); /* same as About/Skills light mode */
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dark .project-card {
-  background:#1f2937 ;
-  box-shadow: 0 4px 20px rgba(31, 41, 55, 0.7); 
+  background: rgba(31, 41, 55, 0.85); /* same dark mode as About/Skills */
 }
-
 
 .project-card:hover {
   transform: translateY(-6px);

@@ -137,7 +137,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <div className="relative group">
             <a
-              href="https://github.com/"
+              href="https://github.com/QA-Shivam/My-Profile.git"
               target="_blank"
               rel="noreferrer"
               className="social-btn github"
@@ -150,7 +150,7 @@ export default function Navbar() {
 
           <div className="relative group">
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/kumar-shivam16399"
               target="_blank"
               rel="noreferrer"
               className="social-btn linkedin"
@@ -163,7 +163,7 @@ export default function Navbar() {
 
           <div className="relative group">
             <a
-              href="https://leetcode.com/"
+              href="https://leetcode.com/u/qashivam/"
               target="_blank"
               rel="noreferrer"
               className="social-btn leetcode"

@@ -139,7 +139,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-                <strong>Availability:</strong> Open to new opportunities · Remote friendly
+                <strong>Availability:</strong> Open to opportunities · Remote friendly
               </div>
             </div>
           </motion.div>

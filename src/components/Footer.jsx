@@ -27,9 +27,10 @@ export default function Footer() {
         {/* Left: Text & Tagline */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <p className="text-sm">© {year} Shivam Kumar – SDET</p>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+          <p className="text-xs italic text-gray-500 dark:text-gray-400">
             “Automating quality, one test at a time.”
           </p>
+
         </div>
 
         {/* Middle: Navigation Links */}

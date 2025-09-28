@@ -33,10 +33,10 @@ const experiences = [
     company: "The Sparks Foundation",
     duration: "Jan 2020 - May 2021",
     description:
-      "Performed functional and regression testing, wrote test cases, and reported defects in JIRA.",
+      "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",
     achievements: [
-      "Created automated test scripts for key web modules.",
-      "Reported and tracked 50+ critical defects with detailed test cases."
+      "Developed responsive and interactive web pages.",
+      "Optimized website layouts for better user experience and accessibility."
     ],
     icon: <img src="spark.png" alt="spark" />,
   },
@@ -80,7 +80,7 @@ export default function Experience() {
       </h2>
 
       <div className="relative max-w-5xl mx-auto mt-12">
-         {/* Vertical timeline line with motion */}
+        {/* Vertical timeline line with motion */}
         <motion.div
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}

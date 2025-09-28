@@ -131,10 +131,10 @@ export default function Contact() {
               <div className="mt-6">
                 <p className="info-small">───── Follow Me ─────</p>
                 <div className="social-icons mt-3">
-                  <a className="social-btn github" href="#" aria-label="Github"><FaGithub className="w-5 h-5" /></a>
-                  <a className="social-btn linkedin" href="#" aria-label="LinkedIn"><FaLinkedin className="w-5 h-5" /></a>
-                  <a className="social-btn whatsapp" href="#" aria-label="Whatsapp"><FaWhatsapp className="w-5 h-5" /></a>
-                  <a className="social-btn instagram" href="#" aria-label="Instagram"><FaInstagram className="w-5 h-5" /></a>
+                  <a className="social-btn github" href="https://github.com/QA-Shivam/My-Profile.git" aria-label="Github"><FaGithub className="w-5 h-5" /></a>
+                  <a className="social-btn linkedin" href="https://www.linkedin.com/in/kumar-shivam16399" aria-label="LinkedIn"><FaLinkedin className="w-5 h-5" /></a>
+                  <a className="social-btn whatsapp" href="https://wa.me/7599665318" aria-label="Whatsapp"><FaWhatsapp className="w-5 h-5" /></a>
+                  <a className="social-btn instagram" href="https://instagram.com/yourusername" aria-label="Instagram"><FaInstagram className="w-5 h-5" /></a>
                 </div>
               </div>
 

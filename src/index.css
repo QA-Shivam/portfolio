@@ -559,7 +559,7 @@ body {
 }
 
 .about-card:hover {
-  transform: translateY(-6px);
+  transform: none;
   box-shadow: 0 6px 15px rgba(16, 185, 129, 0.25);
 }
 
@@ -694,7 +694,7 @@ body {
 }
 
 .skill-card:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform: none;
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
 }
 
@@ -999,13 +999,13 @@ body {
   background: rgba(31, 41, 55, 0.85); /* same dark mode as About/Skills */
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
+.project-card:hover {  
+  transform: none;
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
 }
 
 .cert-card:hover {
-  transform: translateY(-6px);
+  transform: none;
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
 }
 

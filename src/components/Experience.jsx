@@ -8,7 +8,7 @@ const experiences = [
   {
     role: "SDET Engineer",
     company: "AngelOne Limited",
-    duration: "Mar 2023 - Present",
+    duration: "Mar 2024 - Present",
     description:
       "Developed and maintained automation frameworks, CI/CD pipelines, and end-to-end QA solutions.",
     achievements: [
@@ -21,7 +21,7 @@ const experiences = [
   {
     role: "Software Quality Engineer",
     company: "Infosys Limited",
-    duration: "Jun 2021 - Dec 2022",
+    duration: "Mar 2022 - Feb 2024",
     description:
       "Automated regression and API tests using Selenium, Playwright, and RestAssured.",
     achievements: [
@@ -33,7 +33,7 @@ const experiences = [
   {
     role: "Web Development Intern",
     company: "The Sparks Foundation",
-    duration: "Jan 2020 - May 2021",
+    duration: "Jan 2022 - Apr 2022",
     description:
       "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",
     achievements: [
@@ -62,7 +62,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="experience-section py-20 px-6 relative">
-    <h2 className="experience-title text-center">
+      <h2 className="experience-title text-center text-3xl md:text-4xl font-bold mb-8">
         <span className="relative inline-block">
           Experience
           <motion.span
@@ -106,16 +106,11 @@ export default function Experience() {
                   </h3>
                 </div>
 
-                {/* ✅ Fixed calendar icon placement */}
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
-                  <span className="font-medium text-gray-700 dark:text-gray-300">
-                    {exp.company}
+                  <FiCalendar className="text-[#10b981]" />
+                  <span>
+                    {exp.company} • {exp.duration}
                   </span>
-                  <span className="text-gray-400">•</span>
-                  <div className="flex items-center gap-1">
-                    <FiCalendar className="text-[#10b981]" />
-                    <span>{exp.duration}</span>
-                  </div>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
@@ -136,6 +131,7 @@ export default function Experience() {
                       variants={itemVariants}
                       className="flex items-start gap-2"
                     >
+                      {/* ✅ Filled green arrow same as image */}
                       <MdPlayArrow
                         className="text-[#10b981] mt-[2px] flex-shrink-0"
                         size={18}

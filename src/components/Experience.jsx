@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiCalendar } from "react-icons/fi";
+import { MdPlayArrow } from "react-icons/md"; 
 import { useInView } from "react-intersection-observer";
 
 const experiences = [
@@ -45,9 +47,7 @@ const experiences = [
 export default function Experience() {
   const listVariants = {
     hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.2 }
-    },
+    visible: { transition: { staggerChildren: 0.2 } },
   };
 
   const itemVariants = {
@@ -57,16 +57,16 @@ export default function Experience() {
 
   const dotVariants = {
     hidden: { scale: 0, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } }
+    visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
   };
 
   return (
     <section id="experience" className="experience-section py-20 px-6 relative">
-      <h2 className="experience-title text-center">
+      <h2 className="experience-title text-center text-3xl md:text-4xl font-bold mb-8">
         <span className="relative inline-block">
           Experience
           <motion.span
-            className="experience-title-underline absolute left-0 bottom-0"
+            className="experience-title-underline absolute left-0 bottom-0 h-[4px] w-full bg-[#10b981] rounded-full"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: false }}
@@ -77,7 +77,7 @@ export default function Experience() {
       </h2>
 
       <div className="relative max-w-5xl mx-auto mt-12">
-        {/* Vertical timeline line with motion */}
+        {/* Vertical timeline line */}
         <motion.div
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
@@ -93,34 +93,50 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.2 }}
-              className={`relative flex w-full ${i % 2 === 0 ? "justify-start" : "justify-end"}`}
+              className={`relative flex w-full ${
+                i % 2 === 0 ? "justify-start" : "justify-end"
+              }`}
             >
               {/* Card */}
-              <div
-                className={'experience-card w-full md:w-9/12 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 rounded-xl p-6 shadow-lg'}              >
+              <div className="experience-card w-full md:w-9/12 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 rounded-xl p-6 shadow-lg">
                 <div className="flex items-center mb-3 gap-3 text-[#10b981] text-xl">
                   <span className="company-icon-wrapper">{exp.icon}</span>
-                  <h3 className="text-xl md:text-2xl font-semibold">{exp.role}</h3>
+                  <h3 className="text-xl md:text-2xl font-semibold">
+                    {exp.role}
+                  </h3>
                 </div>
 
-                <p className="text-gray-500 dark:text-gray-400 text-sm subtitle">
-                  {exp.company} • {exp.duration}
-                </p>
+                <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
+                  <FiCalendar className="text-[#10b981]" />
+                  <span>
+                    {exp.company} • {exp.duration}
+                  </span>
+                </div>
+
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
                   {exp.description}
                 </p>
 
-                {/* Animated achievements */}
+                {/* ✅ Achievements with filled green arrow icons */}
                 <motion.ul
-                  className="mt-4 list-disc list-inside text-gray-700 dark:text-gray-300"
+                  className="mt-4 space-y-2 text-gray-700 dark:text-gray-300"
                   variants={listVariants}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.5 }}
                 >
                   {exp.achievements.map((item, idx) => (
-                    <motion.li key={idx} variants={itemVariants} className="mb-1">
-                      {item}
+                    <motion.li
+                      key={idx}
+                      variants={itemVariants}
+                      className="flex items-start gap-2"
+                    >
+                      {/* ✅ Filled green arrow same as image */}
+                      <MdPlayArrow
+                        className="text-[#10b981] mt-[2px] flex-shrink-0"
+                        size={18}
+                      />
+                      <span>{item}</span>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -128,7 +144,7 @@ export default function Experience() {
 
               {/* Timeline Dot */}
               <motion.span
-                className="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-green-800 rounded-full shadow-md"
+                className="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#10b981] rounded-full shadow-md"
                 variants={dotVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -138,6 +154,8 @@ export default function Experience() {
           ))}
         </div>
       </div>
+
+      {/* Scroll Indicator */}
       <motion.div
         className="scroll-indicator absolute bottom-6 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}

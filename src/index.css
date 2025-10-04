@@ -674,7 +674,7 @@ body {
   /* balanced spacing */
   max-width: 1200px;
   /* allow more cards per row */
-  margin: 2rem auto 0;
+  margin: 3rem auto 0;
   /* center align with margin */
   width: 100%;
 }

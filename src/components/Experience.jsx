@@ -62,7 +62,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="experience-section py-20 px-6 relative">
-      <h2 className="experience-title text-center text-3xl md:text-4xl font-bold mb-8">
+    <h2 className="experience-title text-center">
         <span className="relative inline-block">
           Experience
           <motion.span
@@ -106,11 +106,16 @@ export default function Experience() {
                   </h3>
                 </div>
 
+                {/* ✅ Fixed calendar icon placement */}
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
-                  <FiCalendar className="text-[#10b981]" />
-                  <span>
-                    {exp.company} • {exp.duration}
+                  <span className="font-medium text-gray-700 dark:text-gray-300">
+                    {exp.company}
                   </span>
+                  <span className="text-gray-400">•</span>
+                  <div className="flex items-center gap-1">
+                    <FiCalendar className="text-[#10b981]" />
+                    <span>{exp.duration}</span>
+                  </div>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
@@ -131,7 +136,6 @@ export default function Experience() {
                       variants={itemVariants}
                       className="flex items-start gap-2"
                     >
-                      {/* ✅ Filled green arrow same as image */}
                       <MdPlayArrow
                         className="text-[#10b981] mt-[2px] flex-shrink-0"
                         size={18}

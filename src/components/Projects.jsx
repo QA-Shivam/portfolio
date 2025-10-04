@@ -120,31 +120,23 @@ export default function ProjectsAndCertifications() {
     setVisibleCount((prev) => Math.min(prev + 3, projectsData.length));
   };
 
-  const { ref: projectUnderlineRef, inView: projectUnderlineInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
-
-  const { ref: certUnderlineRef, inView: certUnderlineInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
-
   return (
     <section id="projects" className="projects-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         {/* Projects Header */}
         <div className="text-center">
-          <h2 className="projects-section-heading">
-            Projects
-            <motion.span
-              ref={projectUnderlineRef}
-              className="project-section-underline"
-              style={{ transformOrigin: "left" }}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: projectUnderlineInView ? 1 : 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-            />
+          <h2 className="projects-section-heading text-center">
+            <span className="relative inline-block">
+              Projects
+              <motion.span
+                className="project-section-underline absolute left-0 bottom-0"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1 }}
+                style={{ transformOrigin: "left" }}
+              />
+            </span>
           </h2>
           <p className="project-subtitle">
             Selected projects and case-studies showing architecture, automation and outcomes.
@@ -182,9 +174,8 @@ export default function ProjectsAndCertifications() {
                   href={p.repo && p.repo !== "#" ? p.repo : undefined}
                   target={p.repo && p.repo !== "#" ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className={`btn-repo flex items-center gap-2 ${
-                    !p.repo || p.repo === "#" ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
+                  className={`btn-repo flex items-center gap-2 ${!p.repo || p.repo === "#" ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
                   onClick={(e) => {
                     if (!p.repo || p.repo === "#") e.preventDefault();
                   }}
@@ -211,20 +202,22 @@ export default function ProjectsAndCertifications() {
 
         {/* Certifications */}
         <div className="mt-16 text-center">
-          <h3 className="projects-section-heading">
-            Certifications
-            <motion.span
-              ref={certUnderlineRef}
-              className="cert-section-underline"
-              style={{ transformOrigin: "left" }}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: certUnderlineInView ? 1 : 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-            />
-          </h3>
+          <h2 className="projects-section-heading text-center">
+            <span className="relative inline-block">
+              Certifications
+              <motion.span
+                className="cert-section-underline absolute left-0 bottom-0"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1 }}
+                style={{ transformOrigin: "left" }}
+              />
+            </span>
+          </h2>
           <p className="project-subtitle">Professional certifications — click badges to view.</p>
 
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {certsData.map((c, i) => (
               <motion.div
                 key={c.id}

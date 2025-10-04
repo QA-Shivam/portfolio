@@ -43,11 +43,6 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const { ref: underlineRef, inView: underlineInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
-
   const listVariants = {
     hidden: {},
     visible: {
@@ -68,15 +63,17 @@ export default function Experience() {
   return (
     <section id="experience" className="experience-section py-20 px-6 relative">
       <h2 className="experience-title text-center">
-        Experience
-        <motion.span
-          ref={underlineRef}
-          className="experience-title-underline"
-          style={{ transformOrigin: "left" }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: underlineInView ? 1 : 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        />
+        <span className="relative inline-block">
+          Experience
+          <motion.span
+            className="experience-title-underline absolute left-0 bottom-0"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            style={{ transformOrigin: "left" }}
+          />
+        </span>
       </h2>
 
       <div className="relative max-w-5xl mx-auto mt-12">

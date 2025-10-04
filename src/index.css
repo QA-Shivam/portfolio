@@ -654,15 +654,16 @@ body {
 }
 
 .skills-title-underline {
-  display: block;
   height: 4px;
-  background: #10b981;
+  width: 100%; /* matches the wrapper width = text width */
+  background-color: #10b981;
   border-radius: 4px;
-  margin-top: 6px;
-  width: 150px;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  bottom: -10px;
 }
+
+
+
 
 /* Grid aligned with About cards */
 .skills-grid {
@@ -797,15 +798,14 @@ body {
 }
 
 .experience-title-underline {
-  display: block;
   height: 4px;
-  background: #10b981;
+  width: 100%;
+  background-color: #10b981;
   border-radius: 4px;
-  margin-top: 6px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  bottom: -10px;
 }
+
 
 
 .timeline-dot {
@@ -964,6 +964,7 @@ body {
   position: relative;
   display: inline-block;
   color: #374151;
+  padding-bottom: 2rem; 
 }
 
 .dark .projects-section-heading {
@@ -971,24 +972,25 @@ body {
 }
 
 .project-section-underline {
-  display: block;
   height: 4px;
-  width: 150px;
-  background: #10b981;
+  width: 100%;
+  background-color: #10b981;
   border-radius: 4px;
-  margin: 0.5rem auto 1rem;
+  display: block;
+  bottom: -10px;
+  
 }
 
 .cert-section-underline {
-  display: block;
   height: 4px;
-  width: 250px; 
-  background: #10b981;
+  width: 100%;
+  background-color: #10b981;
   border-radius: 4px;
-  margin: 0.5rem auto 1rem;
+  display: block;
+  bottom: -10px;
 }
 .project-card {
-  background: rgba(229, 231, 235, 0.85); /* same as About/Skills light mode */
+  background: #e5e7ebe6;
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -996,7 +998,7 @@ body {
 }
 
 .dark .project-card {
-  background: rgba(31, 41, 55, 0.85); /* same dark mode as About/Skills */
+  background:#1f2937d9;
 }
 
 .project-card:hover {  
@@ -1206,18 +1208,17 @@ body {
 .contact-title .highlight { color: #10b981; }
 
 .contact-underline {
-  display: block;
   height: 4px;
-  background: #10b981;
+  width: 100%;
+  background-color: #10b981;
   border-radius: 4px;
-  margin-top: 6px;
-  width: 230px;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  bottom: -10px;
 }
 .contact-subtitle {
   font-size:0.875rem;
   color: #6b7280;
+   margin-top: 2rem
 }
 
 .dark .contact-subtitle {

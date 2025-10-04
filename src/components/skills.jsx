@@ -30,24 +30,21 @@ const skills = [
 ];
 
 export default function Skills() {
-  const { ref: underlineRef, inView: underlineInView } = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
-
   return (
     <section id="skills" className="skills-section">
       {/* Title + Underline */}
       <h2 className="skills-title text-center">
-        My <span className="highlight">Skills</span>
-        <motion.span
-          ref={underlineRef}
-          className="skills-title-underline"
-          style={{ transformOrigin: "left" }}
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: underlineInView ? 1 : 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        />
+        <span className="relative inline-block">
+          My <span className="highlight">Skills</span>
+          <motion.span
+            className="skills-title-underline absolute left-0 bottom-0"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+            style={{ transformOrigin: "left" }}
+          />
+        </span>
       </h2>
 
       {/* Skills Grid */}

@@ -12,7 +12,6 @@ export default function Contact() {
 
   const { ref: leftRef, inView: leftInView } = useInView({ triggerOnce: false, threshold: 0.2 });
   const { ref: rightRef, inView: rightInView } = useInView({ triggerOnce: false, threshold: 0.2 });
-  const { ref: underlineRef, inView: underlineInView } = useInView({ triggerOnce: false, threshold: 0.3 });
 
   // Vite env vars (fallback strings if not set)
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
@@ -69,23 +68,24 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-10">
-          <h2 className="contact-title">
-            Let's <span className="highlight">Connect</span>
+          <h2 className="contact-title text-center">
+            <span className="relative inline-block"> Let's <span className="highlight">Connect</span>
+              <motion.span
+                className="contact-underline absolute left-0 bottom-0"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1 }}
+                style={{ transformOrigin: "left" }}
+              />
+            </span>
           </h2>
-          <motion.span
-            ref={underlineRef}
-            className="contact-underline"
-            style={{ transformOrigin: "left" }}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: underlineInView ? 1 : 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-          />
-          <p className="contact-subtitle mt-3">
+          <p className="contact-subtitle">
             I’m available for freelance projects and full-time opportunities — or just to say hi.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start ">
           {/* Left: Contact card + socials */}
           <motion.div
             ref={leftRef}

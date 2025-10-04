@@ -62,7 +62,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="experience-section py-20 px-6 relative">
-      <h2 className="experience-title text-center text-3xl md:text-4xl font-bold mb-8">
+      <h2 className="experience-title text-center">
         <span className="relative inline-block">
           Experience
           <motion.span

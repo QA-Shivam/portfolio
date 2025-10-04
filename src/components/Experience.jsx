@@ -101,7 +101,7 @@ export default function Experience() {
               <div className="experience-card w-full md:w-9/12 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 rounded-xl p-6 shadow-lg">
                 <div className="flex items-center mb-3 gap-3 text-[#10b981] text-xl">
                   <span className="company-icon-wrapper">{exp.icon}</span>
-                  <h3 className="text-xl md:text-2xl font-semibold">
+                  <h3 className="text-xl md:text-xl font-semibold">
                     {exp.role}
                   </h3>
                 </div>

@@ -1235,7 +1235,7 @@ body {
 
 /* Keep dark mode */
 .dark .contact-card {
-  @apply bg-gray-800;
+  background: #1f2937d9;
 }
 
 .contact-card:hover {
@@ -1349,7 +1349,7 @@ body {
 }
 /* Dark mode */
 .dark .contact-form {
-  @apply bg-gray-800;
+   background: #1f2937d9;
 }
 
 
@@ -1445,7 +1445,7 @@ body {
 }
 /* Dark mode override */
 .dark .map-card {
-  @apply bg-gray-700;
+  background: #1f2937d9;
 }
 .map-placeholder {
   @apply w-full h-40 flex items-center justify-center rounded-md bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-300;

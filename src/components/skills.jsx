@@ -27,7 +27,7 @@ const skills = [
   { name: "Appium", icon: <img src="appium.svg" alt="Appium" className="w-6 h-6" />, level: 80, },
   { name: "Docker", icon: <FaDocker className="text-blue-500 text-2xl" />, level: 85 },
   { name: "Grafana", icon: <SiGrafana className="text-[#F46800] text-2xl" />, level: 85 },
-  { name: "Azure", icon: <SiMicrosoftazure className="text-[#0078D4] text-2xl" />, level: 85 }
+  { name: "Azure", icon: <SiMicrosoftazure className="text-[#0078D4] text-2xl" />, level: 80 }
 
 ];
 

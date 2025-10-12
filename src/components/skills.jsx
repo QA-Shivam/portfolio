@@ -8,7 +8,7 @@ import {
   FaDocker,
   FaGitAlt,
 } from "react-icons/fa";
-import { SiSelenium, SiPlaywright, SiPostman, SiJira, SiGrafana } from "react-icons/si";
+import { SiSelenium, SiPlaywright, SiPostman, SiMicrosoftazure, SiGrafana, SiJenkins } from "react-icons/si";
 import { motion, animate } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../index.css";
@@ -23,9 +23,11 @@ const skills = [
   { name: "Playwright", icon: <SiPlaywright className="text-green-400 text-2xl" />, level: 85 },
   { name: "Postman", icon: <SiPostman className="text-orange-400 text-2xl" />, level: 80 },
   { name: "Git", icon: <FaGitAlt className="text-[#F05032] text-2xl" />, level: 85 },
+  { name: "Jenkins", icon: <SiJenkins className="text-[#D33833] text-2xl" />, level: 85 },
   { name: "Appium", icon: <img src="appium.svg" alt="Appium" className="w-6 h-6" />, level: 80, },
   { name: "Docker", icon: <FaDocker className="text-blue-500 text-2xl" />, level: 85 },
   { name: "Grafana", icon: <SiGrafana className="text-[#F46800] text-2xl" />, level: 85 },
+  { name: "Azure", icon: <SiMicrosoftazure className="text-[#0078D4] text-2xl" />, level: 85 }
 
 ];
 

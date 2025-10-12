@@ -85,7 +85,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start ">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start ">
           {/* Left: Contact card + socials */}
           <motion.div
             ref={leftRef}

@@ -536,7 +536,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   /* ✅ auto-fit prevents overflow */
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
   justify-items: center;
 }
@@ -670,7 +670,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   /* smaller min width */
-  gap: 2rem;
+  gap: 1.5rem;
   /* balanced spacing */
   max-width: 1200px;
   /* allow more cards per row */
@@ -760,7 +760,7 @@ body {
 @media (max-width: 480px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 1.5rem;
     max-width: 100%;
   }
 

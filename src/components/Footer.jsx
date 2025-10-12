@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full relative bg-[#e5e7ebe6] text-gray-700 dark:bg-gray-800 dark:text-gray-400 shadow-sm">
+    <footer className="w-full relative bg-[#e5e7ebe6] text-gray-700 dark:bg-[#1f2937d9] dark:text-gray-400 shadow-sm">
       <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 py-8 px-4">

@@ -24,9 +24,4 @@ jobs:
       - name: Deploy to GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          git config --global user.name "QA-Shivam"
-          git config --global user.email "shivamkumar16399@gmail.com"
-
-          # Deploy to gh-pages 
-          npx gh-pages -d dist -r https://x-access-token:${GH_TOKEN}@github.com/QA-Shivam/portfolio.git
+        run:  npx gh-pages -d dist -r https://x-access-token:${GH_TOKEN}@github.com/QA-Shivam/portfolio.git

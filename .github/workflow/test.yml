@@ -9,9 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container: 
-      images: node:20
+      image: node:20
     steps:
-      - use: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           node-version: 20
       - run: npm ci

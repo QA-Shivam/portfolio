@@ -55,7 +55,7 @@ export default function Footer() {
             </a>
 
             {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/kumar-shivam16399" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/qashivam" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin
                 size={20}
                 className="text-gray-700 dark:text-white hover:text-[#0077B5] dark:hover:text-[#0A66C2] transition-colors duration-200"

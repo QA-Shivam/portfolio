@@ -150,7 +150,7 @@ export default function Navbar() {
 
           <div className="relative group">
             <a
-              href="https://www.linkedin.com/in/kumar-shivam16399"
+              href="https://www.linkedin.com/in/qashivam"
               target="_blank"
               rel="noreferrer"
               className="social-btn linkedin"

@@ -73,7 +73,7 @@ export default function About() {
             <a className="social-btn github" href="https://github.com/QA-Shivam/My-Profile.git" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a className="social-btn linkedin" href="https://www.linkedin.com/in/kumar-shivam16399" target="_blank" rel="noopener noreferrer">
+            <a className="social-btn linkedin" href="https://www.linkedin.com/in/qashivam" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
             <a className="social-btn leetcode" href="https://leetcode.com/u/qashivam/" target="_blank" rel="noopener noreferrer">

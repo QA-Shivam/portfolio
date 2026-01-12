@@ -142,7 +142,7 @@ export default function Contact() {
                   </a>
                   <a
                     className="social-btn linkedin"
-                    href="https://www.linkedin.com/in/kumar-shivam16399"
+                    href="https://www.linkedin.com/in/qashivam"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"

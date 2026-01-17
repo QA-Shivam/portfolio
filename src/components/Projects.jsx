@@ -225,7 +225,7 @@ export default function ProjectsAndCertifications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-  className="cert-card relative group"
+                className="cert-card relative group"
               >
                 <div
                   className="absolute top-3 left-3 

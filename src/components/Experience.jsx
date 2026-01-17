@@ -93,9 +93,8 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.2 }}
-              className={`relative flex w-full ${
-                i % 2 === 0 ? "justify-start" : "justify-end"
-              }`}
+              className={`relative flex w-full ${i % 2 === 0 ? "justify-start" : "justify-end"
+                }`}
             >
               {/* Card */}
               <div className="experience-card w-full md:w-9/12 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 rounded-xl p-6 shadow-lg">
@@ -117,7 +116,6 @@ export default function Experience() {
                   {exp.description}
                 </p>
 
-                {/* ✅ Achievements with filled green arrow icons */}
                 <motion.ul
                   className="mt-4 space-y-2 text-gray-700 dark:text-gray-300"
                   variants={listVariants}
@@ -131,8 +129,9 @@ export default function Experience() {
                       variants={itemVariants}
                       className="flex items-start gap-2"
                     >
-                      {/* ✅ Filled green arrow same as image */}
-                     <FiCheckCircle className="text-emerald-500 mt-1" size={14} />
+                      <FiCheckCircle
+                        className="text-emerald-500 mt-1 shrink-0 w-4 h-4 sm:w-[14px] sm:h-[14px]"
+                      />
                       <span>{item}</span>
                     </motion.li>
                   ))}

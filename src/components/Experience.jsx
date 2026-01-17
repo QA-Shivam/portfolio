@@ -31,7 +31,7 @@ const experiences = [
   },
   {
     role: "Web Development Intern",
-    company: "Sparks Foundation",
+    company: "The Sparks Foundation",
     duration: "Jan 2022 - Apr 2022",
     description:
       "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",
@@ -105,12 +105,13 @@ export default function Experience() {
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
-                  <FiCalendar className="text-[#10b981]" />
-                  <span>
-                    {exp.company} • {exp.duration}
-                  </span>
-                </div>
+                <div className="flex flex-wrap items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
+  <FiCalendar className="text-[#10b981] flex-shrink-0" />
+  <span className="break-words">
+    {exp.company} • {exp.duration}
+  </span>
+</div>
+
 
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
                   {exp.description}

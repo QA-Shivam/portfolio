@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiCalendar } from "react-icons/fi";
-import { MdPlayArrow } from "react-icons/md"; 
-import { useInView } from "react-intersection-observer";
+import { FiCheckCircle } from "react-icons/fi";
 
 const experiences = [
   {
@@ -37,7 +36,8 @@ const experiences = [
     description:
       "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",
     achievements: [
-      "Developed responsive and interactive web pages.",
+      "As an intern developed responsive and interactive web pages layouts using HTML, CSS, JavaScript, and PHP.",
+      " Followed project requirements, coding standards, and timelines to deliver functional and responsive web pages.",
       "Optimized website layouts for better user experience and accessibility."
     ],
     icon: <img src="spark.png" alt="spark" />,
@@ -132,10 +132,7 @@ export default function Experience() {
                       className="flex items-start gap-2"
                     >
                       {/* ✅ Filled green arrow same as image */}
-                      <MdPlayArrow
-                        className="text-[#10b981] mt-[2px] flex-shrink-0"
-                        size={18}
-                      />
+                     <FiCheckCircle className="text-emerald-500 mt-1" size={14} />
                       <span>{item}</span>
                     </motion.li>
                   ))}

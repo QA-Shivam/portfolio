@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiArrowRight } from "react-icons/fi";
+import { HiOutlineShieldCheck } from "react-icons/hi";
 import "../index.css";
 
 const projectsData = [
@@ -225,8 +225,16 @@ export default function ProjectsAndCertifications() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
-                className="cert-card"
+  className="cert-card relative group"
               >
+                <div
+                  className="absolute top-3 left-3 
+                 w-7 h-7 flex items-center justify-center
+                 bg-emerald-100 dark:bg-emerald-900
+                 rounded-md"
+                >
+                  <HiOutlineShieldCheck className="text-emerald-600" size={16} />
+                </div>
                 <div className="cert-img">
                   <img src={c.badge} alt={`${c.title} badge`} />
                 </div>

@@ -31,7 +31,7 @@ const experiences = [
   },
   {
     role: "Web Development Intern",
-    company: "thesparksfoundation",
+    company: "The Sparks Foundation",
     duration: "Jan 2022 - Apr 2022",
     description:
       "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",

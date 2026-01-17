@@ -5,6 +5,7 @@ import { FiExternalLink, FiArrowRight } from "react-icons/fi";
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import "../index.css";
 
+/* ---------------- PROJECTS DATA ---------------- */
 const projectsData = [
   {
     id: 1,
@@ -62,6 +63,7 @@ const projectsData = [
   },
 ];
 
+/* ---------------- CERTIFICATIONS DATA ---------------- */
 const certsData = [
   {
     id: 1,
@@ -93,7 +95,7 @@ const certsData = [
     issuer: "Udemy",
     year: 2025,
     badge: "cert6.png",
-    link: "https://drive.google.com/file/d/1N872nfzgX_bicmhpp8po4YzQGaSoZIWn/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1N872nfzgX_bicmhpp8po4YzQGaSoZIWn/view",
   },
   {
     id: 5,
@@ -101,7 +103,7 @@ const certsData = [
     issuer: "Microsoft",
     year: 2023,
     badge: "cert4.svg",
-    link: "https://learn.microsoft.com/api/credentials/share/en-gb/ShivamKumar-1554/B6736E5293F247FF?sharingId=6CD55A3419016898",
+    link: "https://learn.microsoft.com/api/credentials/share/en-gb/ShivamKumar-1554/B6736E5293F247FF",
   },
   {
     id: 6,
@@ -109,21 +111,41 @@ const certsData = [
     issuer: "AWS",
     year: 2023,
     badge: "cert5.png",
-    link: "https://drive.google.com/file/d/15IlpwUqIsKuNqmLIduZd2fmfa0LXD1Fo/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/15IlpwUqIsKuNqmLIduZd2fmfa0LXD1Fo/view",
+  },
+  {
+    id: 7,
+    title: "SQL",
+    issuer: "HackerRank",
+    year: 2026,
+    badge: "cert7.png",
+    link: "https://www.hackerrank.com/certificates/iframe/177a40e594ab",
+  },
+  {
+    id: 8,
+    title: "Playwright JS/TS Automation Testing from Scratch & Framework",
+    issuer: "Udemy",
+    year: 2026,
+    badge: "cert8.jpg",
+    link: "https://www.udemy.com/certificate/UC-0d19aae2-e54f-4831-8ddb-6d5cdbc37073/",
   },
 ];
 
 export default function ProjectsAndCertifications() {
   const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCerts, setVisibleCerts] = useState(6);
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => Math.min(prev + 3, projectsData.length));
   };
 
+  const sortedCerts = [...certsData].sort((a, b) => b.year - a.year);
+
   return (
     <section id="projects" className="projects-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-        {/* Projects Header */}
+
+        {/* ================= PROJECTS ================= */}
         <div className="text-center">
           <h2 className="projects-section-heading text-center">
             <span className="relative inline-block">
@@ -132,7 +154,6 @@ export default function ProjectsAndCertifications() {
                 className="project-section-underline absolute left-0 bottom-0"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                viewport={{ once: false }}
                 transition={{ duration: 1 }}
                 style={{ transformOrigin: "left" }}
               />
@@ -143,14 +164,12 @@ export default function ProjectsAndCertifications() {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {projectsData.slice(0, visibleCount).map((p, idx) => (
             <motion.article
               key={p.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: idx * 0.08, duration: 0.5 }}
               className="project-card"
             >
@@ -161,21 +180,23 @@ export default function ProjectsAndCertifications() {
                 </div>
                 <div className="project-id">#{p.id}</div>
               </div>
+
               <p className="project-description">{p.description}</p>
+
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
-                  <span key={t} className="tag">
-                    {t}
-                  </span>
+                  <span key={t} className="tag">{t}</span>
                 ))}
               </div>
+
               <div className="mt-4">
                 <a
                   href={p.repo && p.repo !== "#" ? p.repo : undefined}
                   target={p.repo && p.repo !== "#" ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className={`btn-repo flex items-center gap-2 ${!p.repo || p.repo === "#" ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
+                  className={`btn-repo flex items-center gap-2 ${
+                    !p.repo || p.repo === "#" ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                   onClick={(e) => {
                     if (!p.repo || p.repo === "#") e.preventDefault();
                   }}
@@ -187,7 +208,6 @@ export default function ProjectsAndCertifications() {
           ))}
         </div>
 
-        {/* Load More */}
         {visibleCount < projectsData.length && (
           <div className="flex justify-center mt-8">
             <motion.button
@@ -200,7 +220,7 @@ export default function ProjectsAndCertifications() {
           </div>
         )}
 
-        {/* Certifications */}
+        {/* ================= CERTIFICATIONS ================= */}
         <div className="mt-16 text-center">
           <h2 className="projects-section-heading text-center">
             <span className="relative inline-block">
@@ -209,35 +229,33 @@ export default function ProjectsAndCertifications() {
                 className="cert-section-underline absolute left-0 bottom-0"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
-                viewport={{ once: false }}
                 transition={{ duration: 1 }}
                 style={{ transformOrigin: "left" }}
               />
             </span>
           </h2>
-          <p className="project-subtitle">Professional certifications — click badges to view.</p>
+
+          <p className="project-subtitle">
+            Professional certifications — click badges to view.
+          </p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {certsData.map((c, i) => (
+            {sortedCerts.slice(0, visibleCerts).map((c, i) => (
               <motion.div
                 key={c.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
                 transition={{ delay: i * 0.08, duration: 0.5 }}
                 className="cert-card relative group"
               >
-                <div
-                  className="absolute top-3 left-3 
-                 w-7 h-7 flex items-center justify-center
-                 bg-emerald-100 dark:bg-emerald-900
-                 rounded-md"
-                >
+                <div className="absolute top-3 left-3 w-7 h-7 flex items-center justify-center bg-emerald-100 dark:bg-emerald-900 rounded-md">
                   <HiOutlineShieldCheck className="text-emerald-600" size={16} />
                 </div>
+
                 <div className="cert-img">
                   <img src={c.badge} alt={`${c.title} badge`} />
                 </div>
+
                 <div className="flex flex-col items-center mt-2">
                   <h4 className="cert-title">{c.title}</h4>
                   <p className="cert-meta">
@@ -255,6 +273,18 @@ export default function ProjectsAndCertifications() {
               </motion.div>
             ))}
           </div>
+
+          {visibleCerts < sortedCerts.length && (
+            <div className="flex justify-center mt-8">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setVisibleCerts((p) => p + 6)}
+                className="btn-viewall"
+              >
+                View More Certifications <FiArrowRight />
+              </motion.button>
+            </div>
+          )}
         </div>
       </div>
 

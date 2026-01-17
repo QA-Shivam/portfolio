@@ -106,7 +106,7 @@ export default function Experience() {
                 </div>
 
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm subtitle">
-                  <FiCalendar className="text-[#10b981]" />
+                  <FiCalendar className="text-[#10b981] size={14} " />
                   <span>
                     {exp.company} • {exp.duration}
                   </span>

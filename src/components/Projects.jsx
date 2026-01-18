@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiArrowRight } from "react-icons/fi";
-import { HiOutlineShieldCheck } from "react-icons/hi";
+import { LuAward } from "react-icons/lu";
 import "../index.css";
 
 /* ---------------- PROJECTS DATA ---------------- */
@@ -249,7 +249,7 @@ export default function ProjectsAndCertifications() {
                 className="cert-card relative group"
               >
                 <div className="absolute top-3 left-3 w-7 h-7 flex items-center justify-center bg-emerald-100 dark:bg-emerald-900 rounded-md">
-                  <HiOutlineShieldCheck className="text-emerald-600" size={16} />
+                  <LuAward  className="text-emerald-600" size={16} />
                 </div>
 
                 <div className="cert-img">

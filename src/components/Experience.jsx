@@ -9,7 +9,7 @@ const experiences = [
     company: "AngelOne Limited",
     duration: "Mar 2024 - Present",
     description:
-      "Developed and maintained automation frameworks, CI/CD pipelines, and end-to-end QA solutions.",
+      "Key Responsibilities",
     achievements: [
       "Reduced regression testing time by 40% through automation framework optimization.",
       "Integrated CI/CD pipelines for faster deployments.",
@@ -32,7 +32,7 @@ const experiences = [
     company: "Infosys Limited",
     duration: "Mar 2022 - Feb 2024",
     description:
-      "Automated regression and API tests using Selenium, Playwright, and RestAssured.",
+      "Key Responsibilities",
     achievements: [
       "Contributed as a Manual and Automation Tester across Enterprise Mobility (Android/iOS), IoT Analytics, Enterprise Software, Finance, and Cloud Infrastructure domains.",
       "Developed and maintained robust automated functional test suites using Python-based Robot Framework, ensuring coverage of both positive and negative scenarios.",
@@ -46,7 +46,6 @@ const experiences = [
       "Collaborated proactively with cross-functional teams to review requirements, validate planned tasks, and ensure timely and high-quality deliveries.",
       "Participated in Agile ceremonies including sprint planning, backlog refinement, retrospectives, and delivered release demos to stakeholders.",
       "Analyzed test results, troubleshot failures, and worked closely with developers to ensure effective defect resolution and continuous quality improvement."
-
     ],
     icon: <img src="infosys.png" alt="Infosys" />,
   },
@@ -55,10 +54,10 @@ const experiences = [
     company: "The Sparks Foundation",
     duration: "Jan 2022 - Apr 2022",
     description:
-      "Wrote well-designed, testable, and efficient code following best software development practices. Created website layouts and user interfaces using HTML, CSS, and JavaScript. Recommended improvements to new and existing web pages, layouts, and templates.",
+      "Key Responsibilities",
     achievements: [
       "As an intern developed responsive and interactive web pages layouts using HTML, CSS, JavaScript, and PHP.",
-      " Followed project requirements, coding standards, and timelines to deliver functional and responsive web pages.",
+      "Followed project requirements, coding standards, and timelines to deliver functional and responsive web pages.",
       "Optimized website layouts for better user experience and accessibility."
     ],
     icon: <img src="spark.png" alt="spark" />,
@@ -66,14 +65,22 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
   const listVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: isMobile ? 0.05 : 0.15,
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const dotVariants = {
@@ -98,7 +105,6 @@ export default function Experience() {
       </h2>
 
       <div className="relative max-w-5xl mx-auto mt-12">
-        {/* Vertical timeline line */}
         <motion.div
           initial={{ height: 0 }}
           whileInView={{ height: "100%" }}
@@ -110,14 +116,18 @@ export default function Experience() {
           {experiences.map((exp, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -150 : 150 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={
+                isMobile
+                  ? { opacity: 0, y: 40 }
+                  : { opacity: 0, x: i % 2 === 0 ? -150 : 150 }
+              }
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.2 }}
-              className={`relative flex w-full ${i % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+              className={`relative flex w-full ${
+                i % 2 === 0 ? "justify-start" : "justify-end"
+              }`}
             >
-              {/* Card */}
               <div className="experience-card w-full md:w-9/12 bg-gradient-to-br from-gray-100 via-white to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-800 rounded-xl p-6 shadow-lg">
                 <div className="flex items-center mb-3 gap-3 text-[#10b981] text-xl">
                   <span className="company-icon-wrapper">{exp.icon}</span>
@@ -133,7 +143,6 @@ export default function Experience() {
                   </span>
                 </div>
 
-
                 <p className="text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
                   {exp.description}
                 </p>
@@ -143,7 +152,7 @@ export default function Experience() {
                   variants={listVariants}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: false, amount: 0.5 }}
+                  viewport={{ once: true }}
                 >
                   {exp.achievements.map((item, idx) => (
                     <motion.li
@@ -151,29 +160,27 @@ export default function Experience() {
                       variants={itemVariants}
                       className="flex items-start gap-2"
                     >
-                      <FiCheckCircle
-                        className="text-emerald-500 mt-1 shrink-0 w-4 h-4 sm:w-[14px] sm:h-[14px]"
-                      />
-                      <span>{item}</span>
+                      <FiCheckCircle className="text-emerald-500 mt-1 shrink-0 w-4 h-4 sm:w-[14px] sm:h-[14px]" />
+                      <span className="break-words leading-relaxed">
+                        {item}
+                      </span>
                     </motion.li>
                   ))}
                 </motion.ul>
               </div>
 
-              {/* Timeline Dot */}
               <motion.span
                 className="timeline-dot absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#10b981] rounded-full shadow-md"
                 variants={dotVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.5 }}
-              ></motion.span>
+              />
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className="scroll-indicator absolute bottom-6 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -181,7 +188,7 @@ export default function Experience() {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <span className="w-6 h-10 border-2 border-emerald-500 rounded-full flex items-start justify-center p-1">
-          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></span>
+          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" />
         </span>
       </motion.div>
     </section>

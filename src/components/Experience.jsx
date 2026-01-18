@@ -13,7 +13,17 @@ const experiences = [
     achievements: [
       "Reduced regression testing time by 40% through automation framework optimization.",
       "Integrated CI/CD pipelines for faster deployments.",
-      "Mentored 3 junior QA engineers on automation best practices."
+      "Conduct manual and automation testing for web platform and mobile application (iOS, Android, and Mobile Web app), covering core customer journeys and trading functionalities.",
+      "Design, develop, and maintain automation test cases and regression suites for end-to-end scenarios across web and mobile platforms.",
+      "Maintain automation framework health: enhance existing frameworks, refactor poor code, and migrate Selenium-based web automation to Playwright for improved reliability and speed.",
+      "Execute regression and E2E test suites, log defects, analyze test results, and prepare automation reports for release sign-offs.",
+      "Handle complex testing challenges, reducing regression execution time and enabling faster release cycles.",
+      "Integrate Grafana dashboards to monitor automation suite execution and performance metrics.",
+      "Designed and implemented a Lighthouse-based performance automation framework to measure performance of all critical customer journeys (P0) web platform.",
+      "Collaborate with development and QA teams to improve automation coverage, reduce flakiness, and enhance test efficiency.",
+      "Leveraged MCP Server and Cursor AI to automatically generate test cases in plain English, improving automation coverage and accelerating test creation.",
+      "Actively participate in Agile ceremonies and provide insights on release quality, testing risks, and framework improvements.",
+      "Implemented auto-heal support in the automation framework using a local LLM to dynamically heal element locators at runtime, while keeping human validation in the loop to review and manage healed locators."
     ],
     icon: <img src="angelone.png" alt="AngelOne" />,
   },
@@ -24,8 +34,19 @@ const experiences = [
     description:
       "Automated regression and API tests using Selenium, Playwright, and RestAssured.",
     achievements: [
-      "Improved API test coverage from 60% to 95%.",
-      "Reduced manual testing effort by 35% via automation scripts.",
+      "Contributed as a Manual and Automation Tester across Enterprise Mobility (Android/iOS), IoT Analytics, Enterprise Software, Finance, and Cloud Infrastructure domains.",
+      "Developed and maintained robust automated functional test suites using Python-based Robot Framework, ensuring coverage of both positive and negative scenarios.",
+      "Automated functional test cases in Java using a Selenium-based hybrid framework with WebDriver and TestNG.",
+      "Designed and contributed to a Java–Appium mobile automation framework from scratch, including tool evaluation, effort estimation, risk analysis, and ongoing maintenance.",
+      "Performed manual and automation testing for mobile and web applications, including cross-platform, cross-browser, compatibility, and integration testing.",
+      "Conducted API testing and maintained API automation suites using Postman, improving overall test coverage and reliability.",
+      "Analyzed business and technical requirements to define test conditions, prepare accurate test data, and develop reliable test scripts.",
+      "Executed functional and non-functional testing, managing defect identification, tracking, reporting, and resolution in collaboration with development teams.",
+      "Actively supported automation initiatives by enhancing test frameworks to improve efficiency, stability, and execution reliability.",
+      "Collaborated proactively with cross-functional teams to review requirements, validate planned tasks, and ensure timely and high-quality deliveries.",
+      "Participated in Agile ceremonies including sprint planning, backlog refinement, retrospectives, and delivered release demos to stakeholders.",
+      "Analyzed test results, troubleshot failures, and worked closely with developers to ensure effective defect resolution and continuous quality improvement."
+
     ],
     icon: <img src="infosys.png" alt="Infosys" />,
   },

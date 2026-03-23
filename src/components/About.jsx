@@ -103,7 +103,7 @@ export default function About() {
 
           <p className="about-description hero-subtitle mt-4">
             I am a passionate <span className="highlight">SDET</span> with
-            <strong> 3+ years of professional experience</strong> in automation testing,
+            <strong> 4+ years of professional experience</strong> in automation testing,
             web development, and quality engineering. Currently, I work at
             <span className="highlight"> Angel One</span> focusing on ensuring product quality,
             streamlining test automation processes, and collaborating with cross-functional teams

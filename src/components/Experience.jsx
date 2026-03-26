@@ -25,7 +25,7 @@ const experiences = [
       "Actively participate in Agile ceremonies and provide insights on release quality, testing risks, and framework improvements.",
       "Implemented auto-heal support in the automation framework using a local LLM to dynamically heal element locators at runtime, while keeping human validation in the loop to review and manage healed locators."
     ],
-    icon: <img src="angelone.png" alt="AngelOne" />,
+    icon: <img src="angelone.jpg" alt="AngelOne" />,
   },
   {
     role: "Software Quality Engineer",

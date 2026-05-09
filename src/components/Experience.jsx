@@ -5,7 +5,7 @@ import { FiCheckCircle } from "react-icons/fi";
 
 const experiences = [
   {
-    role: "SDET Engineer",
+    role: "SDET",
     company: "AngelOne Limited",
     duration: "Mar 2024 - Present",
     description:
